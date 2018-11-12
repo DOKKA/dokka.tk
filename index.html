@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="skeleton.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet">
+  <script src="sweep.min.js"></script>
+  <script src="jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+<div class="section hero">
+<div class="container">
+    <div class="row">
+        <div id="column1" class="one-half column"></div>
+        <div class="one-half column">
+                <h4 class="hero-heading">DOKKA.TK</h4>
+                <h5>The website of Kevin Grieger</h5>
+        </div>
+    </div>
+
+</div>
+</div>
+
+  <script type="text/javascript">
+  $(document).ready(()=>{
+      $.get('Felix_the_cat.svg').done((data)=>{
+        var svg = $('svg', data);
+        $('#column1').append(svg);
+        var felix = $('#body')[0];
+        var yyy = function(){
+            sweep(felix, 'fill', '#a8f', '#a8f', {direction: -1, duration: 2000,callback: yyy});
+        };
+        sweep(felix, 'fill', '#a8f', '#a8f', {direction: -1, duration: 2000, callback: yyy});
+        var svg2 = $('svg')
+        svg2.addClass('flip');
+      });
+  })
+  </script>
+</body>
+</html>
